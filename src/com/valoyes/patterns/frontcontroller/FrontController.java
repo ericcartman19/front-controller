@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author benito
  *
  */
-@WebServlet("/*.do")
+@WebServlet("*.do")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
