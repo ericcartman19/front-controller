@@ -31,7 +31,8 @@ public class FrontController extends HttpServlet {
 		Dispatcher dispatcher = new Dispatcher();
 		dispatcher.dispatch(request, response, vista);
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		
 	}
 
 }
