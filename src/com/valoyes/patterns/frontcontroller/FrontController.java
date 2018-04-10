@@ -20,7 +20,11 @@ public class FrontController extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		String requestURI = request.getRequestURI();
+		CommandHelper commandHelper = new CommandHelper();
+		commandHelper.getCommand(requestURI);
+		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
