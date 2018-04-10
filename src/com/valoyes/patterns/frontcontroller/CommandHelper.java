@@ -7,7 +7,7 @@ package com.valoyes.patterns.frontcontroller;
 public class CommandHelper {
 
 	public Command getCommand(String requestURI) {
-		if(requestURI.equals("viewStudentsDetails.do")) {
+		if(requestURI.contains("viewStudentsDetails.do")) {
 			return new ViewStudentCommand();
 		}
 		return null;
