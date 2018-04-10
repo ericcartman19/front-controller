@@ -8,8 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Este Servlet gestionar'a cualquier request que llegue con la extension
- * *.do
+ * Este Servlet gestionar'a cualquier request que llegue con la extension *.do
  * @author benito
  *
  */
@@ -23,7 +22,11 @@ public class FrontController extends HttpServlet {
 		
 		String requestURI = request.getRequestURI();
 		CommandHelper commandHelper = new CommandHelper();
-		commandHelper.getCommand(requestURI);
+		// esta linea demuestra todo el poder del Front Controller pattern,
+		// haciendo el codigo completamente detached del command actual que
+		// se esta ejecutando
+		Command command = commandHelper.getCommand(requestURI);
+		command.execute(request, response);
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
