@@ -9,6 +9,7 @@
 <body>
 
 <!-- JSP buscara un bean llamado studentDetails en la request y dentro la property "id" -->
+<jsp:useBean id="studentDetails" type="com.valoyes.patterns.frontcontroller.StudentVO" scope="request"/>
 Id del estudiante: <jsp:getProperty property="id" name="studentDetails"/>
 Nombre del estudiante: <jsp:getProperty property="name" name="studentDetails"/>
 
