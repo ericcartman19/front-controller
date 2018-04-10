@@ -26,7 +26,10 @@ public class FrontController extends HttpServlet {
 		// haciendo el codigo completamente detached del command actual que
 		// se esta ejecutando
 		Command command = commandHelper.getCommand(requestURI);
-		command.execute(request, response);
+		String vista = command.execute(request, response);
+		
+		Dispatcher dispatcher = new Dispatcher();
+		dispatcher.dispatch(request, response, vista);
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
